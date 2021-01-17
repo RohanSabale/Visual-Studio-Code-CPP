@@ -32,7 +32,7 @@ bool key_segment(int arr[] , int x, int k, int n)
         int j;
         for(j=0;j<k;j++)
         {
-            if(arr[i+j] == x)
+            if(arr[i+j] == x)     // checking 3 is present in the substring of size 3
             break;
         }
         if (j==k)
