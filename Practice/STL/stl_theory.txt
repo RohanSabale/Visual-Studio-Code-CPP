@@ -1,0 +1,191 @@
+1.
+in heap parent node is bigger than the children node
+aim of heap is to get the maximum value in less amount of time
+
+arr=[0,1,2,3,4,5,6,7,8,9]
+
+arr_heap = [9,8,6,7,45,2,0,3,1]
+
+for converting normal array to heap we use
+                                                            syntax:   make_heap(begin(numbers) , end(numbers));
+
+#for pushing the number in heap we first convert the heap in vector then push_back
+the element in vector then we push the heap 
+syntax:         
+                    numbers.push_back(8.88);
+                    push_heap(begin(numbers),end(numbers));
+
+the result will be this-   9 8 6 7 8 5 2 0 3 1 4 
+
+# popping the elements from the heap  
+                        syntax:     pop_heap(begin(numbers) , end(numbers));
+                                        numbers.pop_back();
+
+2. sorting
+        sort                                          syntax :             sort(numbers , numbers +n)                      n= number of elements
+
+        parital_sort                              syntax:             partial_sort (numbers.begin() , numbers.begin() + 5 , numbers. end());
+                                                                                this will sort the first 5 numbers only and the remaining can be in any order      here numbers is the name of the vector   
+                                                                                  
+        nth_element                             syntax:            nth_element (RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last);
+
+        sort_heap                                 syntax :              sort_heap(v.begin(), v.end()); 
+
+        inplace_merge                           syntax:          inplace_merge (v.begin(),v.begin()+5,v.end());
+
+3. partition_point
+
+4. permutations
+                    rotate 
+                    shuffle
+                    next_permutation
+                    prev_permutation
+                    reverse 
+
+5. secret runes 
+                                partioning-sort-heap 
+                                ->stable_*                   stable__sort
+                                                                    stable_partition
+                                        
+                                ->is_*                          is_sorted
+                                                                    is_partitioned
+                                                                    is_heap
+                                                                    is_heap_until
+
+6. numeric algorithms
+                                        inner_product
+                                        count
+                                        accumulate/(transform_)reduce
+                                        adjacent_difference
+                                        partial_sum
+                                        (transform_)inclusive_scan
+                                        (transform_)exclusive_scan
+                                        sample
+
+7. querying a property
+                                        all_of
+                                        any_of
+                                        none_of
+                                        equal 
+
+ 8. querying a property on 2 ranges 
+                                        equal         --> is_permutation          bool
+                                        lexicographical_compare              --> bool
+                                        mismatch
+
+9. searching a value
+                not sorted                              sorted
+
+                find                                            equal_range
+                adjacent_find                              lower_bound,upper_bound
+                                                               binary_search
+
+10. searching a range
+looking for a sub range in the big range
+
+                                        search 
+                                        find_end
+                                        find_first_of
+
+11. searching a relative value  
+                                                max_element->iterator
+                                                min_element -> iterator
+                                                minmax_element ->iterator
+
+12. algos on set 
+sorted vector simply 
+
+                                set_difference(begin(A) , end(A);
+                                begin(B) , end(B),
+                                back_inserter(results));
+
+                                set_intersection
+                                set_union
+                                set_symmetric_difference
+                                includes      --> boolean
+                                merge 
+
+13. move things
+                                copy(first , last , out);                       copy_backward  (imp)
+                                move(first , last, out);                        move_backward(important)
+
+14. 
+        fill(first , last,42);
+        generate(first ,last ,f);
+        iota(first , last , 42);
+        replace (first  , last , 42, 43);
+
+
+15.  changing structure
+
+                remove(begin(collection) , end(collection) , 99);
+                erase(collection , 99);             *** not accepted yet***
+                unique(begin(collection) , end(collection));
+
+
+16.             * _copy 
+                                        remove_copy
+                                        unique_copy
+                                        reverse_copy
+                                        rotate_copy
+                                        replace_copy
+                                        partition_copy
+                                        parital_sort_copy
+
+                *_if                    find_if 
+                                        find_if_not
+                                        count_if
+                                        remove_if
+                                        remove_copy_if
+                                        replace_if
+                                        replace_copy_if
+                                        copy_if 
+                        
+17.      Transform 
+                                transform(begin(collection) , end(collection),
+                                back_inserter(results),
+                                f);
+
+                                 transform(begin(collection) , end(collection),                                      --> 2 collection
+                                 begin(ys),
+                                back_inserter(results),
+                                f);
+        
+
+18. FOR_EACH
+                syntax:                                     for_each(begin(collection) , end(collection), f);
+                                                                ### useful for side effects###
+
+
+
+19.  Raw memory 
+                                fill                      operator =                                           uninitialized_fill                  constructor
+                                copy                   operator =                                            uninitialized_copy             copy constructor                                      
+                                move                    operator =                                             uninitialized_move            move constructor
+
+
+                                uninitialized_fill(first , last , 42);
+                                destroy(first , last);
+                                uninitialized_value_construct
+                                uninitialized_default_construct
+
+20.   _N 
+                                copy_n
+                                fill_n
+                                generate_n
+                                search_n
+                                for_each_n
+                                uninitialized_copy_n
+                                uninitialized_fill_n
+                                uninitialized_move_n
+                                uninitialized_default_construct_n
+                                destroy_n
+
+21. boost.algorithms
+                                gather
+                                sort_subrange
+                                is_palindrome
+                                boyer_moore
+                                one_of                              
+
+
