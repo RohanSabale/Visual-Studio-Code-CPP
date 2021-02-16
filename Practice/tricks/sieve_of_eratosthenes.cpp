@@ -29,7 +29,7 @@ void Sieve(int n)
 
 int main(int argc, char const *argv[])
 {
-    int n=100;
+    int n=10;
     Sieve(n);
     return 0;
 }
