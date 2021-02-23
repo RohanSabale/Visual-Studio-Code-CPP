@@ -9,7 +9,7 @@ void Sieve(int n)
     bool prime[n+1];
     memset(prime , true ,sizeof(prime));
 
-    for(int p=2;p*p<=n;p++)     // for(int p=2;p<=n/2;p++)   this can also be used
+    for(int p=2;p*p<=n/2;p++)     // for(int p=2;p<=n/2;p++)   this can also be used
     {
         // if prime[p] is not changed , then it is a prime
         if(prime[p] == true)
@@ -29,7 +29,7 @@ void Sieve(int n)
 
 int main(int argc, char const *argv[])
 {
-    int n=10;
+    int n=100;
     Sieve(n);
     return 0;
 }
