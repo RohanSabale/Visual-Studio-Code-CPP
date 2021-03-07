@@ -33,6 +33,7 @@ int main()
         if(x ==matrix[i][j])
         {
             cout<<"matrix found"<<i<<" "<<j;
+            return 1;
         }
         else if (x<matrix[i][j])
         {
