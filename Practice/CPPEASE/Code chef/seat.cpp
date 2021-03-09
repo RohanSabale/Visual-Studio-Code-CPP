@@ -9,28 +9,36 @@ int main()
     freopen("input.txt" ,"r" ,stdin);
     freopen("output.txt" , "w" ,stdout);
     #endif
-
+    int t;
+    cin>>t;
+    while(t--)
+    {
    string s;
    cin>>s;
-  
-   vector<int>v;
+    //vector<int>v;
+   int count =0;
    for(int i=0;i<s.size();i++)
    {
-        int count =0;
-      if(s[i] ==1)
-      {
-          count+=1;
-      }
-      if(s[i] =='0')
-      {
-          v.push_back(count);
-          count=0;
-      }
-   }
-   for(auto value:v)
-   {
-       cout<<value;
-   }
+       if(s[i] =='1')
+       {
+           count++;
+           for(int j = i+1;j<s.size();j++)
+           {
+               if(s[j] =='1')
+               {
+                   i++;
+               }
+                else
+                   {
+                       break;
+                   }
+               }
+           }
+       }
+   
+   cout<<count<<endl;
+    }
+  
 }
 
    
