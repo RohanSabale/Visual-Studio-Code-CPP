@@ -1,5 +1,6 @@
 // this program counts the total number of palindrome substring in a string including the string having count 1;
 
+
 #include<bits/stdc++.h>
 using namespace std;
 
