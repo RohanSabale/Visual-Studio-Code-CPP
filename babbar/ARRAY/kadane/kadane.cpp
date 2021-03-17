@@ -23,24 +23,25 @@ int kadane(int arr[] , int n)
 
 int main()
 {
-    
+    /*
      boost;
     #ifndef ONLINE_JUDGE
     freopen("input.txt" ,"r" ,stdin);
     freopen("output.txt" , "w" ,stdout);
     #endif
+    */
+
+
     
-
-
-    /*
-    int arr[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+    int arr[] = {52,77,95,46,-70,-10,9,82,83,-32};
     int n = sizeof(arr)/sizeof(arr[0]);
     
    int k = kadane(arr,n);
     cout<<k;
     return 0;
-*/
 
+
+    /*
     int n;
     cin>>n;
     int arr[n];
@@ -48,8 +49,9 @@ int main()
     {
         cin>>arr[i];
     }
+    */
 
-    int k = kadane (arr,n);
+   // int k = kadane (arr,n);
     cout<<k;
     return 0;
     
