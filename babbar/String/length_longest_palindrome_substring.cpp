@@ -41,7 +41,7 @@ int main()
            }
            if(dp[i][j])
            {
-               len = g+1;
+               len ++;
            }
        }
     }
