@@ -18,42 +18,126 @@ Node* newNode(int val)
     return temp;
 }
 
-Node* Construct(int arr[], int low , int high)
+Node* insertLevelOrder(int arr[], Node* root, int i,int n)
 {
-    if(low >high)
+    if(i<n)
     {
-        return NULL;
+        Node* temp =  newNode(arr[i]);
+        root = temp;
+
+        // insert left child 
+        root->left  = insertLevelOrder(arr, root->left,2*i+1,n);
+
+        // insert right child
+        root->right = insertLevelOrder(arr, root->right,2*i+2,n);
+
     }
-    
-    int mid = (low+high)/2;
-
-    int data = arr[mid];
-    Node lc =Construct(arr,low,mid-1);
-    Node rc = Construct(arr,mid+1,high);
-
-    Node node = newNode(data,lc,rc);
-    return node;
-
+    return root;
 }
-void printInorder(Node* node)
+
+void PrintLevelOrder(Node *root)
 {
-    if(node == NULL)
+    if(root == NULL)    return;
+
+    // create an empty queue for level order traversal
+    queue<Node *>q;
+
+    // Enqueue root and initialize height
+    q.push(root);
+
+    while(q.empty() == false)
     {
-        return;
+        // print front of queue and remove it from queue
+        Node *node = q.front();
+        cout<<node->data<<" ";
+        q.pop();
+
+        // enqueue left child
+        if(node->left != NULL)
+        {
+            q.push(node->left);
+        }
+
+        //enqueue right child
+        if(node->right != NULL)
+        {
+            q.push(node->right);
+        }   
     }
-    printInorder(node ->left);
-    cout<<node->data<<" ";
-    printInorder(node->right);
+}
+// given a binary tree , print its nodes in reverse level order
+void reverseLevelOrder(Node* root)
+{
+    stack<Node* > S;
+    queue<Node* >Q;
+    Q.push(root);
+
+
+    while(Q.empty() == false)
+    {
+        // dequeue node and make it root
+        root= Q.front();
+        Q.pop();
+        S.push(root);
+
+        // Enqueue right child
+        if(root->right)
+        {
+            Q.push(root->right);
+        }
+        if(root->left)
+        {
+            Q.push(root->left);
+        }
+    }
+    while (S.empty() == false)
+    {
+        root = S.top();
+        cout<<root->data<<" ";
+        S.pop();
+    }
+}
+
+// Function to print tree nodes in Inorder fashion
+void inOrder(Node*root)       // Inorder (Left, Root, Right) 
+{
+    if(root != NULL)
+    {
+        inOrder(root->left);
+        cout<<root->data<<" ";
+        inOrder(root->right);
+    }
+}
+//Function to print tree nodes in Preorder fashion
+void PreOrder(Node* root)       // Preorder (Root, Left, Right)
+{
+    if(root!=NULL)
+    {
+        cout<<root->data<<" ";
+        PreOrder(root->left);
+        PreOrder(root->right);
+    }
+}
+//Function to print tree nodes in Postorder fashion
+void PostOrder(Node*root)
+{
+    if(root!=NULL)
+    {
+        PostOrder(root->left);
+        PostOrder(root->right);
+        cout<<root->data<<" ";
+    }
 }
 
 int main()
 {
-    int arr[7] = {12,25,37,50,62,75,85};
-    Node* root= Construct(arr,0,6);
-    cout<<"inorder traversal of the constructed tree is""\n";
-    printInorder(root);
-
-    return 0;
-
-    
+    int arr[] = {1,2,3,4,5,6,6,6,6,6};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    Node* root = insertLevelOrder(arr,root,0,n);
+    //inOrder(root);
+    //PreOrder(root);
+    //PostOrder(root);
+    //reverseLevelOrder(root);
+    PrintLevelOrder(root);
 }
+
