@@ -23,7 +23,7 @@ int kadane(int arr[] , int n)
 
 int main()
 {
-    /*
+    /* 
      boost;
     #ifndef ONLINE_JUDGE
     freopen("input.txt" ,"r" ,stdin);
