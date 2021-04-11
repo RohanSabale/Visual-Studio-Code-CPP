@@ -6,7 +6,7 @@ const int ALPHABET_SIZE =  26;
 // Trie Node
 struct TrieNode
 {
-    struct TrieNode *children[ALPHABET_SIZE];
+    struct TrieNode *children[ALPHABET_SIZE];      //children array of 26 integer pointer
 
     // isEndofWorld is true if the node represents
     // end of a word

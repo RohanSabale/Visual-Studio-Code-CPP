@@ -12,6 +12,7 @@ struct TrieNode
 
 struct TrieNode *getNode(void)
 {
+    //pnode is a pointer to structure TrieNode
     struct TrieNode *pnode = new TrieNode;
 
     pnode->isEndofWord = false;
