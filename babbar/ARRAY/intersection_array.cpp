@@ -29,15 +29,6 @@ void intersection()
     }
 
 
-
-
-
-
-
-
-
-
-
 }
 
 int main()
