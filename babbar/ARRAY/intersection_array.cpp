@@ -16,6 +16,28 @@ void intersection()
     {
         cin>>brr[i];
     }
+
+    set<int>hs;
+
+    for(int i = 0;i<n;i++)  hs.insert(arr[i]);
+    for(int i = 0;i<m;i++)
+    {
+        if(hs.find(brr[i]) != hs.end())
+        {
+            cout<<brr[i]<<" ";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 int main()
