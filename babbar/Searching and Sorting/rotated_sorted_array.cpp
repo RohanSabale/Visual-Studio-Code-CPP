@@ -8,7 +8,7 @@ int main()
 {
     int n = 7;
     int arr[n] = {4,5,6,7,0,1,2};
-    int x= 4;
+    int x= 0;
 
     // first we have to find the pivot of array first
 
@@ -28,6 +28,10 @@ int main()
     while(low<high)
     {
         int mid =(low +high)/2;
+
+        if(arr[mid]==x)
+                return mid;
+
         if(arr[mid] <arr[high])
         {
             high  = mid;
@@ -37,6 +41,6 @@ int main()
             low = mid +1;
         }
     }
-    cout<<arr[low];
+   cout<<-1;
     //cout<<arr[high];           both is same
 }
