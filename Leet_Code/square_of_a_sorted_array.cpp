@@ -14,7 +14,7 @@ using namespace std;
 auto Sorted_square(vector<int>V)
 {
     int n = V.size();
-    int start =0 ;
+    int start =n ;
     for(int i=0 ;i<n;i++)
     {
         if(V[i] >=0)
