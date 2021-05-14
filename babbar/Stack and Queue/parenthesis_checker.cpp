@@ -62,7 +62,7 @@ bool areBracketsBalanced(string expr)
 // Driver code
 int main()
 {
-    string expr = "{()}[]";
+    string expr = "{()[]";
  
     // Function call
     if (areBracketsBalanced(expr))
