@@ -19,21 +19,15 @@ using namespace std;
 
 int solve(int num)
 {
-    int sum = 0;
-    int prod= sum;
-    for(sum = 0 ; num>0; sum+=num%10,num/=10) 
-        {
-            ;
-        }
+   int product  =  1;
+   int sum = 0;
 
-    int product = 1;
-    while(num != 0)
-    {
-        product = product  * (prod%10);
-        prod = prod / 10;
-    }
-    //int result = product - sum;
-    return product;
+   for(int i = num ; i; i/=10)
+   {
+       sum +=i %10;
+       product *= i %10;
+   }
+   return product - sum;
 }
 
 int main()
