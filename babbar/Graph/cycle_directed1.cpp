@@ -13,6 +13,29 @@ void initialize()
     }
 }
 
+bool dfs_cycle(int s)
+{
+    visited[s] = true;
+    for(int i = 0;i<Vec[s].size() ;i++)
+    {
+        if(visited[Vec[s][i]] == false)
+        {
+            if(dfs_cycle(Vec[s][i]) == true)
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if(s!=Vec[s][i])
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 int main()
 {
     // boost;
@@ -34,6 +57,7 @@ int main()
         cin>>u>>v;
         Vec[u].push_back(v);
     }
-    
+    cout<<dfs_cycle(0);
+
 
 }
