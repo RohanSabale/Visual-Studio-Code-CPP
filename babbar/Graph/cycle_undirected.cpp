@@ -49,10 +49,10 @@ int main()
 {
     int N,E,u,v;
     cin>>N>>E;
-    Vec.resize(N);
-    visited.resize(N);
+    Vec.resize(N+1);
+    visited.resize(N+1);
 
-   for(auto i : Vec)
+   for(int i = 0; i< E;i++)
    {
        cin>>u>>v;
         Vec[u].push_back(v);
