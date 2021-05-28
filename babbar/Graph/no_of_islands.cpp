@@ -1,20 +1,22 @@
+// have errors need to be resolved
+
 #include<bits/stdc++.h>
 using namespace std;
 
-void mark_current_island(int island[row][column] , int x , int y , int r , int c)
+void mark_current_island(int island[][column] , int i , int j , int row , int column)
 {
-    if(x<0 || x>=r || y<0 || y>=c || island[x][y]!=1)   //boundary case for matrix
+    if(i<0 || i>=row || j<0 || j>=column || island[i][j]!=1)   //boundary case for matrix
     {
         return;
     }
     //mark current cell as visited
-    island[x][y] = 2;
+    island[i][j] = 2;
 
     // make recursive call in all 4 adjacent directions
-    mark_current_island(island ,x+1 ,y ,r,c);   //DOWN
-    mark_current_island(island ,x ,y+1 ,r,c);   //RIGHT
-    mark_current_island(island ,x-1 ,y ,r,c);   //TOP
-    mark_current_island(island ,x ,y -1,r,c);   //LEFT
+    mark_current_island(island ,i+1 ,j ,row,column);   //DOWN
+    mark_current_island(island ,i ,j+1 ,row,column);   //RIGHT
+    mark_current_island(island ,i-1 ,j ,row,column);   //TOP
+    mark_current_island(island ,i ,j -1,row,column);   //LEFT
 }
 
 
@@ -37,7 +39,7 @@ int main()
         }
     }
 
-    if(rows == 0)
+    if(row == 0)
     {
         return 0;
     }
