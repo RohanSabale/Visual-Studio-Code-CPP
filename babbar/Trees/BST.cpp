@@ -25,68 +25,68 @@
 //  2. space complexity  O(n)
 
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-struct Node
-{
-    int data;
-    Node*left;
-    Node * right;
-    Node(int data) : data{data} , right {nullptr} , left{nullptr} { }
-};
-
-
-Node * insert(Node *head ,  int data)
-{
-    if(head == nullptr)  
-    {
-        return  new Node(data);     // this is the first node
-
-    }     
-
-    if(head->data >data)
-    {
-        head ->left  = insert(head->left , data);
-    }
-    else
-    {
-        head->right = insert(head->right,data);
-    }
-    return head;
-}
+// struct Node
+// {
+//     int data;
+//     Node*left;
+//     Node * right;
+//     Node(int data) : data{data} , right {nullptr} , left{nullptr} { }
+// };
 
 
-void printInorder(Node *head)
-{
-    if(head == NULL)
-    {
-        return;
-    }
-    printInorder(head->left);
-    cout<<head->data<<" ";
-    printInorder(head->right);
-}
+// Node * insert(Node *head ,  int data)
+// {
+//     if(head == nullptr)  
+//     {
+//         return  new Node(data);     // this is the first node
+
+//     }     
+
+//     if(head->data >data)
+//     {
+//         head ->left  = insert(head->left , data);
+//     }
+//     else
+//     {
+//         head->right = insert(head->right,data);
+//     }
+//     return head;
+// }
+
+
+// void printInorder(Node *head)
+// {
+//     if(head == NULL)
+//     {
+//         return;
+//     }
+//     printInorder(head->left);
+//     cout<<head->data<<" ";
+//     printInorder(head->right);
+// }
 
 
 
-int main()
-{
-    int N,val;
-    cin>>N;         // no of nodes
-    cin>>val;
-    N--;
-    Node *head = insert(nullptr , val);         // head is root
+// int main()
+// {
+//     int N,val;
+//     cin>>N;         // no of nodes
+//     cin>>val;
+//     N--;
+//     Node *head = insert(nullptr , val);         // head is root
 
-    while(N--)
-    {
-        cin>>val;
-        insert(head, val);
-    }
+//     while(N--)
+//     {
+//         cin>>val;
+//         insert(head, val);
+//     }
 
-    printInorder(head);
-    return 0;
-}
+//     printInorder(head);
+//     return 0;
+// }
 
 
 // input 
@@ -100,3 +100,17 @@ int main()
 
 // output
 //1 2 3 5 7 9 
+
+
+
+
+
+// create binary search tree
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n
+}
