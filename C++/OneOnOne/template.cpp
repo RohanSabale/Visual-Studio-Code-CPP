@@ -35,7 +35,7 @@ int main()
     //cout<<getMax(x,y);
     char c1 = 'a' , c2 ='x';
     //cout<<static_cast<char>(getMaxChar(c1,c2))<<endl;
-    cout<<getMax<int>(x,y)<<endl;           // passing the datatypes
+    cout<<getMax<int>(x,y)<<endl;           // passing the
     cout<<getMax<char>(c1,c2)<<endl;
 
 }

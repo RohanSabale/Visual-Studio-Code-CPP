@@ -13,3 +13,24 @@
 // 3. weak_ptr:
 //             IT is special type of shared_ptr which doesnt count the reference 
 
+#include<iostream>
+using namespace std;
+
+class MyInt{
+    public:
+        explicit MyInt(int * p = nullptr)   { data = p;}
+        ~MyInt() {delete data;}
+        int & operator *() { return * data;}
+    private:
+            int * data;
+
+
+};
+
+int main()
+{
+    int * p = new int(10);
+    MyInt myint = MyInt(p);         // myint object is storing what p is pointing to
+    cout<<*myint<<endl;
+    return 0;
+}
