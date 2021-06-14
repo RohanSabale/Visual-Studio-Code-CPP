@@ -12,7 +12,6 @@
 // Take an integer c
 // (c>1 and b should be divisible by c) and replace b with bc
 //     . 
-
 // Your goal is to make a
 // equal to b using exactly k turns.
 
