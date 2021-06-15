@@ -3,6 +3,7 @@ using namespace std;
 
 void pascal(int n)
 {
+    
     int arr[n][n] ;
     for(int i=0;i<n;i++)
     {
