@@ -28,7 +28,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void dijkstra(int graph[v][v])
+# define V 6 // no of vertices
+
+int selectMinVertex(vector<int>&value , vector<bool>&processed)
+{
+    int minimum = INT_MAX;
+    int vertex;
+    for(int i = 0;i<V;i++)
+    {
+        if(processed[i] == false && value[i] <minimum)
+        {
+            vertex = i;
+            minimum = value[i];
+        }
+    }
+    return vertex;
+}
+void dijkstra(int graph[V][V])
 {
     int parent[V] ;         // shortest path structure
     vector<int> value(V,INT_MAX);        // keeps shortest path values to each
@@ -55,8 +71,8 @@ void dijkstra(int graph[v][v])
                 2. vertex j is not included in shortest path graph
                 3.Edge weight is smaller than current edge weight.
             */
-           if(graph[u][j]! =0 && processed[j] == false && value[u] = INT_MAX
-           && value[u]+ graph[u][j]<value[j])
+           if(graph[u][j]!=0 && processed[j]==false && value[u]!=INT_MAX
+			&& (value[u]+graph[u][j] < value[j]))
            {
                value[j] = value[u] + graph[u][j];
                parent[j] = u;
@@ -64,12 +80,18 @@ void dijkstra(int graph[v][v])
         }
     }
 
+    // print shortest path graph
+    for(int i = 1;i<V;i++)
+    {
+        cout<<"U->V:"<<parent[i]<<"->"<<i<<" wt = "<<graph[parent[i]][i]<<endl;
+    }
+
 }
 
 
 int main()
 {
-    int grpah[v][v] = {{0,1,4,0,0,0},
+    int graph[V][V] = {{0,1,4,0,0,0},
                                 {1,0,4,2,7,0},
                                 {4,4,0,3,5,0},
                                 {0,2,3,0,4,6},
