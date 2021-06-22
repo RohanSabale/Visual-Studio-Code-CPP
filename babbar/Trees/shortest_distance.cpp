@@ -54,7 +54,7 @@ int findDist(Node*root , int k , int dist)
     {
         return -1;
     }
-    if(root->data =k)
+    if(root->data ==k)
     {
         return dist;
     }
