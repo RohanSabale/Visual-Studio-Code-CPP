@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+void bfs(vector<vector<int>>&edges , int start ,  )
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -40,10 +43,11 @@ int main()
         if(vis[i] == 1 && edges[i].size() == 1  && i!=0)    // edges[i].size() == 1 because leaf has only one parent above
         // i!= 0 means it should be not root node
         {
-            
+            ans++;
 
         }
     }
+    cout<<ans<<endl;
 
 
 
