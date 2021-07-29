@@ -80,8 +80,15 @@ int main()
     // scan(value);
     // print(value);
 
+    int t;
+    scan(t);
+    int arr[t];
+    for(int i = 0;i<t;i++)
+    {
+        scan(arr[i]);
+    }    
     
-  
+   
 
 
 

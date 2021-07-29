@@ -80,8 +80,9 @@ int main()
     // scan(value);
     // print(value);
 
+    cout<<(24*360)/82.50;
     
-  
+   
 
 
 
