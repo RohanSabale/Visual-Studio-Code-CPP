@@ -1,20 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void print(int n)
+void printdigit(int n)
 {
+    string arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
     if(n==0)
     {
-        return;
+        return ;
     }
-    else
-        cout<<n;
-        print(n-1);
+    printdigit(n/10);
+    cout<<arr[n%10]<<" ";
 }
 
 int main()
 {
     int n;
-    n = 8;
-    print(n);
+    n =1000 ;
+    printdigit(n);
+    
 }
