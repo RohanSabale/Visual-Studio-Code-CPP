@@ -1,21 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printdigit(int n)
+int exponent(int n , int m)
 {
-    string arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
-    if(n==0)
+    if(m==0)
     {
-        return ;
+        return 1;
     }
-    printdigit(n/10);
-    cout<<arr[n%10]<<" ";
+    int ans = n*exponent(n,m-1);
+    return ans;
+
 }
 
 int main()
 {
-    int n;
-    n =1000 ;
-    printdigit(n);
-    
+    int n,m;
+    n=2;
+    m =4;
+    cout<<exponent(n,m);
 }
