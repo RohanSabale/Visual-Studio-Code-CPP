@@ -64,6 +64,23 @@ void printdigit(int n)
     cout<<arr[n%10]<<" ";
 }
 
+int exp(int n)              //2^n  using fast exponentiation
+{
+    if(n==0)
+    {
+        return 1;
+    }
+   int ans = exp(n/2);
+   if(n&1)
+   {
+       return 2*ans*ans;
+   }
+   else
+   {
+       return ans*ans;
+   }
+}
+
 
 int main()
 {
@@ -83,6 +100,11 @@ int main()
     // int n;
     // n =1000 ;
     // printdigit(n);
+
+    // int n;             
+    // n = 5;
+    // exp(n);
+
 
      
 }
