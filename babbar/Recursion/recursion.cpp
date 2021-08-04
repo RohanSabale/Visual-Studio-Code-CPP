@@ -81,6 +81,95 @@ int exp(int n)              //2^n  using fast exponentiation
    }
 }
 
+bool checksorted(vector<int>arr , int index)                // checking the array is 
+//sorted or not
+{
+    if(index >= arr.size())
+    {
+        return true;
+    }
+    if(arr[index] < arr[index-1])
+    {
+        return false;
+    }
+    return checksorted(arr, index +1);
+}
+
+void printsubset(vector<int>input , vector<int>output , int index)
+{
+    if(index>=input.size())
+    {
+        for(auto i : output)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
+        
+        return;
+    }
+
+    // nahi lena 
+    printsubset(input , output , index+1);
+
+    // lena hai 
+    output.push_back(input[index]);
+    printsubset(input , output , index+1);
+}
+
+int numberofjumps(int n)                        // number of jumps to get to the point
+// required you can jump only 1,2,3 steps at once
+{
+    if(n<0)
+    {
+        return 0;
+    }
+    if(n==1)
+    {
+        return 1;
+    }
+    if(n==0)
+    {
+        return 1;
+    }
+    return numberofjumps(n-1) + numberofjumps(n-2) + numberofjumps(n-3);
+}
+
+
+void getsubsequence(string str, int index , string output)  // all the subsequences of the string
+{
+    if(index == str.length())
+    {
+        cout<<output<<endl;
+        return;
+    }
+    // nahi lena 
+    getsubsequence(str , index+1 , output);
+
+    // lena hai
+    output.push_back(str[index]);
+    getsubsequence(str, index+1 , output);
+}
+
+
+void getperm(string str , int index)
+{
+    if(index>=str.length())
+    {
+        cout<<str<<endl;
+        return;
+    }
+    for(int i = index ;i<str.length();i++)
+    {
+        swap(str[index],str[i]);
+
+        getperm(str , index+1);
+        
+        // backtrack
+        swap(str[index],str[i]);
+    }
+}
+
+
 
 int main()
 {
@@ -105,6 +194,47 @@ int main()
     // n = 5;
     // exp(n);
 
+//     vector<int>arr{1,2,3,7,5};
+//    bool answer = checksorted(arr,1);
+//    cout<<answer;
 
+
+    // cout<<"enter size";
+    // int size;
+    // cin>>size;
+
+    // vector<int>vec(size);
+    // vector<int>subset;
+
+    // cout<<"Enter elements"<<endl;
+    // for(int i =0;i<size;i++)
+    // {
+    //     cin>>vec[i];
+    // }
+    // cout<<"Power set is as floows"<<endl;
+    // printsubset(vec ,subset ,0);
+
+
+    // cout<<"enter the value of n"<<endl;
+    // int n;
+    // cin>>n;
+
+    // cout<<"Number of jumps"<<numberofjumps(n)<<endl;
+
+    // cout<<"Enter the string"<<endl;
+    // string str;
+    // cin>>str;
+
+    // cout<<"Printing all the subsequences"<<endl;
+    // string output="";
+    // getsubsequence(str,0,output);
+
+
+    // cout<<"Enter the string"<<endl;
+    // string str;
+    // cin>>str;
+
+    // cout<<"Printing all the permutations"<<endl;
+    // getperm(str , 0);
      
 }
