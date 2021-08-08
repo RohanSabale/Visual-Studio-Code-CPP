@@ -3,9 +3,30 @@
 //2. find the relation between the problem and subproblem
 //3. generalize the relation
 
+
+
+
+/*
+########### Code snippets.############
+1. Sum of n numbers
+2. power as a^b
+3.ways to go from left top corner to right bottom corner in n*m matrix
+4. factorial of a number
+5.fibonacci series
+6. print the spelling of digits
+7. 2^n using fast exponentiation
+8. Check the array is sorted or not
+9. print the power set of array
+10.number of jumps to get to the point
+11.  required you can jump only 1,2,3 steps at once
+12. all the subsequences of the string
+13. permutaions of the string
+
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
+//1
 int sum(int n)          // sum of n numbers
 {
     if(n==1)
@@ -15,6 +36,7 @@ int sum(int n)          // sum of n numbers
     return n+sum(n-1);
 }
 
+//2
 int power(int a , int b)            // power as a^b         complexity O(n)
 {
     if(b ==0)
@@ -24,6 +46,7 @@ int power(int a , int b)            // power as a^b         complexity O(n)
     return a*power(a,b-1);
 }
 
+//3
 int ways_matrix(int n , int m)      // ways to go from left top corner to right bottom corner in nxm matrix
 {
     if(n== 1 || m == 1)
@@ -33,6 +56,7 @@ int ways_matrix(int n , int m)      // ways to go from left top corner to right 
    return ways_matrix(n-1,m) + ways_matrix(n,m-1);
 }
 
+//4
 int factorial(int n)        // factorial of number
 {
     if(n<=1)
@@ -43,7 +67,8 @@ int factorial(int n)        // factorial of number
     return factorial(n-1) * n;
 }
 
-int fibonacci(int num)
+//5
+int fibonacci(int num)              // fibonacci series
 {
     if(num == 1 || num ==0)
     {
@@ -53,7 +78,8 @@ int fibonacci(int num)
     return fibonacci(num-1) + fibonacci(num-2);
 }
 
-void printdigit(int n)
+//6
+void printdigit(int n)                      // print the spelling of digits
 {
     string arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
     if(n==0)
@@ -64,6 +90,7 @@ void printdigit(int n)
     cout<<arr[n%10]<<" ";
 }
 
+//7
 int exp(int n)              //2^n  using fast exponentiation
 {
     if(n==0)
@@ -81,6 +108,8 @@ int exp(int n)              //2^n  using fast exponentiation
    }
 }
 
+
+//8
 bool checksorted(vector<int>arr , int index)                // checking the array is 
 //sorted or not
 {
@@ -95,7 +124,8 @@ bool checksorted(vector<int>arr , int index)                // checking the arra
     return checksorted(arr, index +1);
 }
 
-void printsubset(vector<int>input , vector<int>output , int index)
+//9
+void printsubset(vector<int>input , vector<int>output , int index)          // all the subsets of the array
 {
     if(index>=input.size())
     {
@@ -116,6 +146,7 @@ void printsubset(vector<int>input , vector<int>output , int index)
     printsubset(input , output , index+1);
 }
 
+//10.
 int numberofjumps(int n)                        // number of jumps to get to the point
 // required you can jump only 1,2,3 steps at once
 {
@@ -135,6 +166,7 @@ int numberofjumps(int n)                        // number of jumps to get to the
 }
 
 
+//11
 void getsubsequence(string str, int index , string output)  // all the subsequences of the string
 {
     if(index == str.length())
@@ -151,7 +183,8 @@ void getsubsequence(string str, int index , string output)  // all the subsequen
 }
 
 
-void getperm(string str , int index)
+//12
+void getperm(string str , int index)        // permutaions of the string
 {
     if(index>=str.length())
     {
