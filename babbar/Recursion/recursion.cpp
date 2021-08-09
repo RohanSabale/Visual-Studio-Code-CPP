@@ -17,10 +17,12 @@
 7. 2^n using fast exponentiation
 8. Check the array is sorted or not
 9. print the power set of array
-10.number of jumps to get to the point
-11.  required you can jump only 1,2,3 steps at once
-12. all the subsequences of the string
-13. permutaions of the string
+10.number of jumps to get to the point   required you can jump only 1,2,3 steps at once
+11. all the subsequences of the string
+12. permutaions of the string.
+13.sum of digits of a  number
+14.  Reverse a sting
+15. Palindrome Checker
 
 */
 #include<bits/stdc++.h>
@@ -202,7 +204,28 @@ void getperm(string str , int index)        // permutaions of the string
     }
 }
 
+//13.  sum of  digits of a number
 
+int sum_digit(int n)
+{
+    if(n<10)
+    {
+        return n;
+    }
+    int k = n%10;
+    return k + sum_digit(n/10);
+}
+
+//14. reverse a string
+void reverse(string s)
+{
+    if(s.size() == 0)
+    {
+        return;
+    }
+    reverse(s.substr(1));
+    cout<<s[0];
+}
 
 int main()
 {
@@ -269,5 +292,17 @@ int main()
 
     // cout<<"Printing all the permutations"<<endl;
     // getperm(str , 0);
+
+    // int n;
+    // n = 981;
+    // cout<<"printing the sum of digits of a number"<<" ";
+    // cout<<sum_digit(n);
+
+    
+    // cout<<"reversing a string"<<endl;
+    // string s;
+    // s = "string";
+    // reverse(s);
+
      
 }
