@@ -22,7 +22,7 @@
 12. permutaions of the string.
 13.sum of digits of a  number
 14.  Reverse a sting
-15. Palindrome Checker
+
 
 */
 #include<bits/stdc++.h>
