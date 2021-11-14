@@ -3,6 +3,7 @@ add the numbers.
 */
 
 #include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 void segment_add(int arr[] , int k, int n)
