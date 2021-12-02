@@ -15,6 +15,6 @@ int  check(int num)
 }
 int main()
 {
-    int num = 16;
+    int num = 19;
     cout<<check(num);
 }
