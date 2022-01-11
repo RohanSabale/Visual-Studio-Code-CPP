@@ -1,5 +1,6 @@
 
 
+import java.util.*;
 public class main{// here everything is written inside the class , the file
     // name and class name should be same     
 
@@ -53,6 +54,18 @@ public class main{// here everything is written inside the class , the file
         int[] mango = new int[3];       // array name mango , size is 3
         mango[0] = 1;
         mango[1] = 2;
+        // default initialise is 0
+
+        System.out.println(mango.length);       // length of the array
+        Arrays.sort(mango);         // sorting the array
+        // package needed to be imported
+
+
+        int[] fruit = {1,2,3};
+        int[][] fruits = {{1,2,3},{4,5,6}};
+        System.out.println(fruits[1][2]);
+
+
         
         
 
