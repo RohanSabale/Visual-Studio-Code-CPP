@@ -65,7 +65,7 @@ public class main{// here everything is written inside the class , the file
         int[][] fruits = {{1,2,3},{4,5,6}};
         System.out.println(fruits[1][2]);
 
-
+        
         
         
 
